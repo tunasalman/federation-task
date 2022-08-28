@@ -1,0 +1,10 @@
+{
+  "name": "ikas",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Tuna",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "docker-compose up --build -V"
+  }
+}
