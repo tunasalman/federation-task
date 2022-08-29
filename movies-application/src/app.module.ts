@@ -8,6 +8,8 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { PassportModule } from '@nestjs/passport';
 import { loggingMiddleware, PrismaModule } from 'nestjs-prisma';
 import { JwtStrategy } from './common/jwt.strategy';
+import { MovieRepositoryToken } from './interfaces/movie-repository.interface';
+import { MovieRepositoryService } from './movie.repository';
 
 import { MoviesResolver } from './movies.resolver';
 
@@ -37,6 +39,13 @@ import { MoviesResolver } from './movies.resolver';
       },
     }),
   ],
-  providers: [MoviesResolver, JwtStrategy],
+  providers: [
+    MoviesResolver,
+    JwtStrategy,
+    {
+      provide: MovieRepositoryToken,
+      useClass: MovieRepositoryService,
+    },
+  ],
 })
 export class AppModule {}

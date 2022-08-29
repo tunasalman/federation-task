@@ -20,4 +20,6 @@ export class MovieCreateInput {
   @IsDateString()
   @IsNotEmpty()
   releaseDate!: Date;
+
+  userId!: string;
 }
