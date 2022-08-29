@@ -15,7 +15,6 @@ export class MoviesResolver {
 
   @Query(() => [Movie], { nullable: true })
   movies(@CurrentUser() userId: string) {
-    console.log(userId, 'BURDA');
     return this.prisma.movie.findMany({
       where: { userId },
     });

@@ -28,13 +28,6 @@ import { MoviesResolver } from './movies.resolver';
     PrismaModule.forRoot({
       isGlobal: true,
       prismaServiceOptions: {
-        // prismaOptions: {
-        //   datasources: {
-        //     db: {
-        //       url: 'mongodb+srv://ikas-mongo:ikas-mongo@cluster0.drmkli6.mongodb.net/movie?retryWrites=true&w=majority',
-        //     },
-        //   },
-        // },
         middlewares: [
           loggingMiddleware({
             logger: new Logger('PrismaMiddleware'),
